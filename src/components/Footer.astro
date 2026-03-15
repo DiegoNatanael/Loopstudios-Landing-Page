@@ -8,16 +8,16 @@ const footerLinks = [
 ];
 
 const socialIcons = [
-  { name: 'facebook', icon: '/images/icon-facebook.svg' },
-  { name: 'twitter', icon: '/images/icon-twitter.svg' },
-  { name: 'pinterest', icon: '/images/icon-pinterest.svg' },
-  { name: 'instagram', icon: '/images/icon-instagram.svg' },
+  { name: 'facebook', icon: './images/icon-facebook.svg' },
+  { name: 'twitter', icon: './images/icon-twitter.svg' },
+  { name: 'pinterest', icon: './images/icon-pinterest.svg' },
+  { name: 'instagram', icon: './images/icon-instagram.svg' },
 ];
 ---
 
 <footer class="bg-loop-black py-16 px-8 md:px-24 md:py-12 text-loop-white flex flex-col md:flex-row items-center md:justify-between space-y-10 md:space-y-0">
   <div class="flex flex-col items-center md:items-start space-y-8 md:space-y-12">
-    <img src="/images/logo.svg" alt="Loopstudios Logo" class="w-36 md:w-48" />
+    <img src="./images/logo.svg" alt="Loopstudios Logo" class="w-36 md:w-48" />
     <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 font-alata text-center md:text-left">
       {footerLinks.map((link) => (
         <li class="relative group">
