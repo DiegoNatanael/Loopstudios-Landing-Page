@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/images/favicon-32x32.png" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title} | Loopstudios</title>
+</head>
+<body class="bg-loop-white text-loop-black overflow-x-hidden">
+	<slot />
+</body>
+</html>

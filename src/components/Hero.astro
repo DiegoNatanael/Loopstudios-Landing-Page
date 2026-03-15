@@ -1,0 +1,19 @@
+---
+import Navbar from './Navbar.astro';
+---
+
+<section class="h-[650px] bg-[url('/images/mobile/image-hero.jpg')] bg-cover bg-no-repeat md:bg-[url('/images/desktop/image-hero.jpg')] md:h-[750px] flex flex-col relative">
+  <div class="absolute inset-0 bg-black/40 z-0"></div>
+  
+  <header class="z-10 bg-transparent">
+    <Navbar />
+  </header>
+
+  <div class="flex flex-1 items-center justify-center md:items-end md:justify-start md:px-24 md:pb-24 z-10 transition-all duration-300">
+    <div class="border-[2px] border-loop-white p-6 md:p-10 max-w-[90%] md:max-w-[650px] transition-all transform hover:scale-105 duration-500">
+      <h1 class="text-4xl md:text-7xl text-loop-white font-josefin font-light leading-tight">
+        Immersive experiences that deliver
+      </h1>
+    </div>
+  </div>
+</section>

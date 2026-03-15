@@ -1,0 +1,62 @@
+---
+const navLinks = [
+  { name: 'About', href: '#' },
+  { name: 'Careers', href: '#' },
+  { name: 'Events', href: '#' },
+  { name: 'Products', href: '#' },
+  { name: 'Support', href: '#' },
+];
+---
+
+<nav class="flex items-center justify-between p-8 md:px-24 md:py-16">
+  <div class="z-50">
+    <img src="/images/logo.svg" alt="Loopstudios Logo" class="w-36 md:w-48" />
+  </div>
+
+  <!-- Desktop Menu -->
+  <ul class="hidden md:flex space-x-8 text-loop-white font-alata">
+    {navLinks.map((link) => (
+      <li class="relative group">
+        <a href={link.href} class="hover:text-loop-white duration-300">
+          {link.name}
+        </a>
+        <div class="absolute bottom--2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-loop-white transition-all duration-300 group-hover:w-full"></div>
+      </li>
+    ))}
+  </ul>
+
+  <!-- Mobile Menu Button -->
+  <button id="menu-btn" class="z-50 md:hidden block focus:outline-none">
+    <img src="/images/icon-hamburger.svg" id="hamburger-icon" alt="Menu" class="w-6" />
+    <img src="/images/icon-close.svg" id="close-icon" alt="Close" class="w-6 hidden" />
+  </button>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-loop-black hidden md:hidden">
+    <div class="flex flex-col justify-center h-full px-8 pb-16">
+      <ul class="flex flex-col space-y-6 text-3xl text-loop-white font-josefin uppercase">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="hover:text-loop-gray-200 transition-colors">
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    hamburgerIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+  });
+</script>

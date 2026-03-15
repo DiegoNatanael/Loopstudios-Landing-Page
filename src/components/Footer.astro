@@ -1,0 +1,46 @@
+---
+const footerLinks = [
+  { name: 'About', href: '#' },
+  { name: 'Careers', href: '#' },
+  { name: 'Events', href: '#' },
+  { name: 'Products', href: '#' },
+  { name: 'Support', href: '#' },
+];
+
+const socialIcons = [
+  { name: 'facebook', icon: '/images/icon-facebook.svg' },
+  { name: 'twitter', icon: '/images/icon-twitter.svg' },
+  { name: 'pinterest', icon: '/images/icon-pinterest.svg' },
+  { name: 'instagram', icon: '/images/icon-instagram.svg' },
+];
+---
+
+<footer class="bg-loop-black py-16 px-8 md:px-24 md:py-12 text-loop-white flex flex-col md:flex-row items-center md:justify-between space-y-10 md:space-y-0">
+  <div class="flex flex-col items-center md:items-start space-y-8 md:space-y-12">
+    <img src="/images/logo.svg" alt="Loopstudios Logo" class="w-36 md:w-48" />
+    <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 font-alata text-center md:text-left">
+      {footerLinks.map((link) => (
+        <li class="relative group">
+          <a href={link.href} class="hover:text-loop-gray-200 transition-colors">
+            {link.name}
+          </a>
+          <div class="absolute bottom--2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-loop-white transition-all duration-300 group-hover:w-full"></div>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="flex flex-col items-center md:items-end space-y-8 md:space-y-12">
+    <div class="flex space-x-6">
+      {socialIcons.map((social) => (
+        <a href="#" class="relative group block">
+          <img src={social.icon} alt={social.name} class="w-6 h-6 hover:scale-110 transition-transform duration-300" />
+          <div class="absolute bottom--2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-loop-white transition-all duration-300 group-hover:w-full"></div>
+        </a>
+      ))}
+    </div>
+    <p class="text-very-dark-gray font-alata text-sm">
+      © 2021 Loopstudios. All rights reserved.
+    </p>
+  </div>
+</footer>

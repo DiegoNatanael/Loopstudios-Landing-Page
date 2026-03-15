@@ -1,0 +1,38 @@
+---
+const creations = [
+  { title: 'Deep Earth', imageMobile: '/images/mobile/image-deep-earth.jpg', imageDesktop: '/images/desktop/image-deep-earth.jpg' },
+  { title: 'Night Arcade', imageMobile: '/images/mobile/image-night-arcade.jpg', imageDesktop: '/images/desktop/image-night-arcade.jpg' },
+  { title: 'Soccer Team VR', imageMobile: '/images/mobile/image-soccer-team.jpg', imageDesktop: '/images/desktop/image-soccer-team.jpg' },
+  { title: 'The Grid', imageMobile: '/images/mobile/image-grid.jpg', imageDesktop: '/images/desktop/image-grid.jpg' },
+  { title: 'From Up Above VR', imageMobile: '/images/mobile/image-from-above.jpg', imageDesktop: '/images/desktop/image-from-above.jpg' },
+  { title: 'Pocket Borealis', imageMobile: '/images/mobile/image-pocket-borealis.jpg', imageDesktop: '/images/desktop/image-pocket-borealis.jpg' },
+  { title: 'The Curiosity', imageMobile: '/images/mobile/image-curiosity.jpg', imageDesktop: '/images/desktop/image-curiosity.jpg' },
+  { title: 'Make It Fisheye', imageMobile: '/images/mobile/image-fisheye.jpg', imageDesktop: '/images/desktop/image-fisheye.jpg' },
+];
+---
+
+<section class="max-w-[1440px] mx-auto px-8 py-24 md:px-24 md:py-40">
+  <div class="flex items-center justify-between mb-12 md:mb-20">
+    <h2 class="text-4xl md:text-5xl font-josefin font-light uppercase text-loop-black">Our Creations</h2>
+    <button class="hidden md:block px-10 py-3 border-[2px] border-loop-black font-alata uppercase tracking-[5px] hover:bg-loop-black hover:text-loop-white transition-all duration-300">See All</button>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+    {creations.map((item) => (
+      <div class="relative overflow-hidden group cursor-pointer">
+        <picture>
+          <source media="(min-width: 768px)" srcset={item.imageDesktop} />
+          <img src={item.imageMobile} alt={item.title} class="w-full h-auto object-cover group-hover:scale-110 group-hover:opacity-60 transition-all duration-500 bg-loop-black" />
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-white/70 group-hover:to-transparent transition-all duration-500"></div>
+        <h3 class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-loop-white group-hover:text-loop-black text-2xl md:text-3xl max-w-[150px] font-josefin font-light transition-all duration-500">
+          {item.title}
+        </h3>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-12 flex justify-center md:hidden">
+    <button class="px-12 py-3 border-[2px] border-loop-black font-alata uppercase tracking-[5px] hover:bg-loop-black hover:text-loop-white transition-all duration-300">See All</button>
+  </div>
+</section>

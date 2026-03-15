@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-dark-gray: hsl(0, 0%, 55%);
+  --color-very-dark-gray: hsl(0, 0%, 41%);
+  --color-loop-white: hsl(0, 0%, 100%);
+  --color-loop-black: hsl(0, 0%, 0%);
+  --color-loop-gray-200: hsl(0, 0%, 85%);
+
+  --font-alata: "Alata", sans-serif;
+  --font-josefin: "Josefin Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-alata);
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-family: var(--font-josefin);
+  }
+}
