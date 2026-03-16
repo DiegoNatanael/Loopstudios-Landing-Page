@@ -1,43 +1,91 @@
-# Astro Starter Kit: Minimal
+# 🏝️ Proyecto: Loopstudios Landing Page
 
-```sh
-npm create astro@latest -- --template minimal
+Este proyecto consiste en el desarrollo de la **landing page de Loopstudios** utilizando **Astro** y **Tailwind CSS**.  
+El objetivo es aplicar los conocimientos sobre **componentes de Astro**, **maquetación**, **estilos responsivos** y **utilidades CSS** para construir un diseño limpio, moderno y adaptable a diferentes dispositivos.
+
+---
+
+## 📖 Descripción general
+
+### 🧩 Vista previa del proyecto
+Captura de pantalla del resultado final de la landing page.  
+
+![Vista previa del proyecto](./screenshoot.jpeg)
+
+---
+
+### 🔗 Enlaces del proyecto
+
+- **Repositorio en GitHub:** [https://github.com/DiegoNatanael/Loopstudios-Landing-Page](https://github.com/DiegoNatanael/Loopstudios-Landing-Page)
+- **Sitio desplegado:** [https://diegonatanael.github.io/Loopstudios-Landing-Page/](https://diegonatanael.github.io/Loopstudios-Landing-Page/)
+
+---
+
+## 🧠 Proceso de desarrollo
+
+### 🛠️ Tecnologías utilizadas
+
+- [Astro](https://astro.build) (v6.0.4)
+- [Tailwind CSS](https://tailwindcss.com/) (v4.2.1)
+- HTML5 semántico
+- Diseño responsivo (Mobile-first)
+- Componentes de Astro reutilizables
+- JavaScript para la lógica del menú móvil
+
+---
+
+### 💡 Lo que aprendí
+Durante el desarrollo de este proyecto, reforcé el uso de componentes dinámicos en Astro y la gestión de estados simples con JavaScript nativo para la interactividad del menú.
+
+Ejemplo de la lógica para el menú de móvil:
+```js
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn?.addEventListener('click', () => {
+  mobileMenu?.classList.toggle('hidden');
+  document.body.classList.toggle('overflow-hidden');
+});
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+También trabajé con el sistema de cuadrícula y Flexbox de Tailwind:
+```html
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+  {creations.map((item) => (
+    <div class="relative group cursor-pointer overflow-hidden">
+      <!-- Contenido de la creación -->
+    </div>
+  ))}
+</div>
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### 🚀 Áreas de mejora
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Implementar animaciones de entrada (Scroll reveal) para una experiencia más fluida.
+- Optimizar aún más el rendimiento de las imágenes utilizando el componente `<Image />` de Astro.
+- Explorar el uso de variables personalizadas en la nueva versión de Tailwind CSS 4.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+### 📚 Recursos útiles
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- [Documentación de Astro](https://docs.astro.build)  
+- [Guía oficial de Tailwind CSS](https://tailwindcss.com/docs)  
+- [Google Fonts - Alata & Josefin Sans](https://fonts.google.com/)
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### 👩‍💻 Autor
+
+- **Nombre completo:** Diego Natanael Gonzalez Esparza
+- **Carrera:** TICS
+- **Grupo:** 6to
+- **Correo institucional:** 23151206@aguascalientes.tecnm.mx
+
+---
+
+### ✨ Reflexión final
+
+Este proyecto fue una excelente oportunidad para practicar la conversión de un diseño estático a una aplicación web funcional y responsiva. Lo que más disfruté fue trabajar con la arquitectura de componentes de Astro, ya que facilita mucho la organización del código.
